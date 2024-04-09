@@ -69,7 +69,7 @@ cout << "Enter Desired Colour: \n";
 cin >> SELcol;
 }//end of function getpdata()
 
-
+//function that displays physical properites back to the user 
 void displaypdata()
 {
 cout << horLineForDisp << "|" << setw(31) << left << "Bike Details" <<
@@ -81,24 +81,35 @@ cout << pipe << left << setw(10) << SELmod << pipe << horLineForDisp;
 cout << pipe << left << setw(20) << "Colour";
 cout << pipe << left << setw(10) << SELcol << pipe << horLineForDisp;
 }
-};
+
+}; //end of class phyprop
+
+//class engprop enables user to set desired fuel capacity, engine capacity and horse power
+//it virtually inherits class phyprop above
 class engprop :virtual public phyprop
 {
 public:
 double SELfcap;
 int SELecap;
 double SELhp;
+
+//constructor that initializes all capacities to 0
 engprop()
 {
 SELecap = 0;
 SELfcap = 0;
 SELhp = 0;
 }
+
+//below arrays store available capacities and horse power
 double fcap[10] = { 13.5, 14, 14.5, 15, 15.5, 16 };
 int ecap[10] = { 75, 120, 140, 160, 200, 250 };
 double hp[10] = { 7.6, 8.2, 9.6, 10.2, 10.5, 11.2 };
+
+//function that gets desired capacites from user 
 void getedata()
 {
+//User enters desired FUEL CAPACITY
 cout << horLine << "|" << setw(44) << "Available Fuel Capacities" <<
 setw(26) << "|" << horLine;
 for (i = 0; i < 5; i++)
@@ -106,6 +117,8 @@ cout << "| " << left << setw(10) << fcap[i] << " L";
 cout << "|" << horLine;
 cout << "Enter required fuel capacity (In Litres): \n";
 cin >> SELfcap;
+
+//User enters desired ENGINE CAPACITY
 cout << horLine << "|" << setw(69) << "Available Engine Capacities" <<
 setw(26) << "|" << horLine;
 for (i = 0; i < 5; i++)
@@ -116,6 +129,8 @@ cout << "|" << left << setw(7) << ecap[5] << "hp"
 << "| " << horLine;
 cout << "Enter required engine capacity (In cc): \n";
 cin >> SELecap;
+
+//User enters desired HORSE POWER
 cout << horLine << "|" << setw(69) << "Available Horse Power On Bikes"
 << setw(22) << "|" << horLine << "| ";
 for (i = 0; i < 5; i++)
@@ -127,19 +142,20 @@ cout << left << setw(6) << hp[5] << "hp"
 << "| " << horLine;
 cout << "Enter required horse power (In bhp): \n";
 cin >> SELhp;
-cout << endl
-<< endl
-<< "Click enter to continue..";
+  
+cout << endl << endl << "Click enter to continue..";
 cin.get();
 system("cls");
 cout << "\n-----------------------------|CA's BIKE RENTALS|-------------
 ----------------\n\n";
 cout << endl
 << "\nYou have selected:\n";
-}
+} //END OF getedata()
+
+//function that displays user's selected capacities and horse power 
 void displayedata()
 {
-displaypdata();
+displaypdata(); 
 cout << pipe << left << setw(20) << "Fuel Capacity";
 cout << pipe << left << setw(10) << SELfcap << pipe << horLineForDisp;
 cout << pipe << left << setw(20) << "Engine Capacity";
@@ -147,7 +163,12 @@ cout << pipe << left << setw(10) << SELecap << pipe << horLineForDisp;
 cout << pipe << left << setw(20) << "Horse Power";
 cout << pipe << left << setw(10) << SELhp << pipe << horLineForDisp;
 }
-};
+}; //end of engprop class
+
+
+//price class calculates the price of the bike 
+//for the price calculation we require capacities and horse power as in engprop class
+//hence we virtually inherit it 
 class price :virtual public engprop
 {
 protected:
