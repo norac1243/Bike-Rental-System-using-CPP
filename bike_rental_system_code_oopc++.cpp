@@ -167,8 +167,9 @@ cout << pipe << left << setw(10) << SELhp << pipe << horLineForDisp;
 
 
 //price class calculates the price of the bike 
-//for the price calculation we require capacities and horse power as in engprop class
-//hence we virtually inherit it 
+//for the price calculation we require capacities and horse power as in engprop class and brand as in phyprop
+//phyprop classes and data are all public so engprop inherits them 
+//class price then virtually inherits engprop 
 class price :virtual public engprop
 {
 protected:
@@ -176,3 +177,97 @@ int nb = 0, h = 35, j = 26, s = 27, f = 12, m = 19, v = 23;
 public:
 float c = 1, d = 1, e = 1;
 float z;
+
+//function that calculates factors for price
+void call()
+{
+//considering brand for factor e
+if (SELbran == bran[0])
+{
+e = e * 30;
+}
+else if (SELbran == bran[1])
+{
+e = e * 30;
+}
+else if (SELbran == bran[2])
+{
+e = e * 40;
+}
+else if (SELbran == bran[3])
+{
+e = e * 50;
+}
+else if (SELbran == bran[4])
+{
+e = e * 60;
+}
+else
+{
+e = e * 70;
+}
+
+//considering engine capacity for factor c
+if (SELecap == ecap[0])
+{
+c = c * 200;
+}
+else if (SELecap == ecap[1])
+{
+c = c * 300;
+}
+else if (SELecap == ecap[2])
+{
+c = c * 400;
+}
+else if (SELecap == ecap[3])
+{
+c = c * 500;
+}
+else if (SELecap == ecap[4])
+{
+c = c * 600;
+}
+else
+{
+c = c * 700;
+}
+
+//considering horse power for factor d
+if (SELhp == hp[0])
+{
+d = d * 200;
+}
+else if (SELhp == hp[1])
+{
+d = d * 300;
+}
+else if (SELhp == hp[2])
+{
+d = d * 400;
+}
+else if (SELhp == hp[3])
+{
+d = d * 500;
+}
+else if (SELhp == hp[4])
+{
+d = d * 600;
+}
+else
+{
+d = d * 700;
+}
+z = c + d + e; //sum of all above calculated factors 
+}//end of function call ()
+
+//displays overall properties of bike selected by calling displayedata from class engprop
+void dis()
+{
+displayedata(); 
+}
+
+//below functions are defined outside the class scope 
+void operator++();
+void dispy();
+};//end of class price
