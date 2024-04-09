@@ -1,14 +1,15 @@
 
-/*OOPS PROGRAMMING LABORATORY
+/*OOP with C++ PROGRAMMING LABORATORY
 MINI PROJECT
 BIKE RENTAL SYSTEM
 DONE BY:
-ABIGIAL FERNANDES GOLIAS 21CE04
-CARON SALLY PEREIRA 21CE15
+ABIGIAL FERNANDES GOLIAS 
+CARON SALLY PEREIRA 
 CLASS: SE COMP (RC2019-20)
 BATCH: P1
 DATE OF SUBMISSION: 14/11/22
 */
+
 #include <iostream>
 #include <conio.h>
 #include <string>
@@ -16,24 +17,30 @@ DATE OF SUBMISSION: 14/11/22
 #include <stdlib.h>
 #include<ios>
 using namespace std;
+
+//BELOW variables are used for display 
 string horLine = "\n------------------------------------------------------------------
 -----\n";
 string pipe = "|";
 string horLineForDisp = "\n---------------------------------\n";
 int i = 0;
+
+//BELOW CLASS STORES physical properties of each bike and enables USERS to select the specifications of desired bike.
 class phyprop
 {
-public:
-string col[50] = { "BLUE", "BLACK", "RED", "WHITE", "YELLOW", "GREEN" };
-string bran[50] = { "HONDA", "JUPITER", "SUZUKI", "MAESTRO", "VESPA", "FASCINO"};
-string mod[50] = { "25S", "6G", "CB200X", "SP125", "PCX160", "AX25" };
-string SELcol;
-string SELbran;
-string SELmod;
-// entering physical properties
+  public:
+  string col[50] = { "BLUE", "BLACK", "RED", "WHITE", "YELLOW", "GREEN" };
+  string bran[50] = { "HONDA", "JUPITER", "SUZUKI", "MAESTRO", "VESPA", "FASCINO"};
+  string mod[50] = { "25S", "6G", "CB200X", "SP125", "PCX160", "AX25" };
+  string SELcol;
+  string SELbran;
+  string SELmod;
+
+// function for entering physical properties
 void getpdata()
 {
 cout << horLine << "|" << setw(44);
+//User enters desired BRAND
 cout << "Available Brands" << setw(26) << "|" << horLine;
 for (i = 0; i < 5; i++)
 {
@@ -42,6 +49,8 @@ cout << "| " << left << setw(12) << bran[i];
 cout << "|" << horLine;
 cout << "Enter Brand: \n";
 cin >> SELbran;
+
+//User enters desired MODEL
 cout << horLine << "|" << setw(69) << "Available Models";
 cout << setw(26) << "|" << horLine;
 for (i = 0; i < 5; i++)
@@ -49,6 +58,8 @@ cout << "| " << left << setw(12) << mod[i];
 cout << "|" << horLine;
 cout << "Enter Model: \n";
 cin >> SELmod;
+
+//User enters desired Colour
 cout << horLine << "|" << setw(69) << "Available Colours" << setw(26) <<
 "|" << horLine;
 for (i = 0; i < 5; i++)
@@ -56,7 +67,9 @@ cout << "| " << left << setw(12) << col[i];
 cout << "|" << horLine;
 cout << "Enter Desired Colour: \n";
 cin >> SELcol;
-}
+}//end of function getpdata()
+
+
 void displaypdata()
 {
 cout << horLineForDisp << "|" << setw(31) << left << "Bike Details" <<
