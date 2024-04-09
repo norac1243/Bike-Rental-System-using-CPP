@@ -310,7 +310,7 @@ nb = m;
 }
 }//end of overloaded function operator++
 
-//below displays cost abd number of bikes rented 
+//below displays charges (not total cost) and number of bikes rented 
 void price::dispy()
 {
 cout << "\n\nTotal charges with respect to above properties " << z;
@@ -320,4 +320,149 @@ cout << "\n\n------------------------------------------------------------------
 cout << "\nClick enter to proceed to registration...";
 cin.get();
 system("cls");
+}
+
+//reg class has functionalities for user registration and prints receipt header
+class reg
+{
+public:
+string name, add, phn;
+int age, nod;
+void getdata()
+{
+cout << "\n-----------------------------|CA's BIKE RENTALS|-------------
+----------------\n\n";
+  //user enteres details below:
+cout << " REGISTRATION\n";
+cout << "\nEnter Name: \n";
+getline(cin, name);
+cout << "Enter Age: \n";
+cin >> age;
+cin.ignore();
+cout << "Enter Address: \n";
+getline(cin, add);
+cout << "Enter Phone no: \n";
+getline(cin, phn);
+cout << "Enter Number of days: \n";
+cin >> nod;
+}
+
+//prints receipt header with details acquired above
+void dis2()
+{
+cout << "\n-----------------------------|CA's BIKE RENTALS|-------------
+----------------\n\n";
+cout << "\n------------------------------|RECIEPT|----------------------
+--------\n";
+cout << endl << "Name: " << name;
+cout << endl << "Phone no.: " << phn;
+cout << endl << "Number of days: " << nod;
+}
+
+}; //end of class reg
+
+//responsible for calculating the final cost 
+//virually inherits reg and price 
+class calcor : virtual public reg,virtual public price
+{
+public:
+float cal = 1;
+float totalrent;
+void calculate();
+void display();
+void finalbill2();
+};//end of class calcor
+
+// calcor uses nod (number of days) from reg to draw up final cost
+void calcor::calculate()
+{
+call();
+if (nod <= 2)
+{
+cal = cal * 500;
+}
+else if (nod < 7 && nod > 2)
+{
+cal = cal * 700;
+}
+else
+{
+cal = cal * 1500;
+}
+totalrent = cal+z;
+}
+
+//displays final cost to user to confirm rent
+void calcor::display()
+{
+cout << "\nTotal rent charges with respect to number of days and bike 
+properties:" << totalrent;
+cout << "\nPayment will be done at pickup (Santa Inez, Panjim)";
+cout << "\nClick enter to confirm rental..";
+cin.get();
+system("cls");
+}
+
+//prints details on the bill 
+void calcor::finalbill2()
+{
+cout << "\nTotal rent price: " << totalrent;
+cout << "\n\nBike Pickup Address: Santa Inez, Panjim";
+cout << "\nReporting Time: 10:00am";
+cout << "\nPayment to be done at pick up address (Santa Inez, Panjim)";
+cout << "\nusing your preferred payment method (UPI / Debit card / Credit 
+card)";
+cout << "\n\nA confirmatory message of your booking has been sent to " << phn;
+cout << "\n\nFor any discrepancies / queries kindly contact: \n+91 7509080489";
+cout << "\nca.bikerental@gmail.com";
+cout << "\n\nThanks for renting with us! :)";
+}
+
+//prints first page of the our rental system application 
+void welcome()
+{
+cout << "\n-----------------------------|CA's BIKE RENTALS|--------------------
+---------\n\n";
+cout << "Welcome to CA's Bike Rentals.\nWe are motorbike rental company based 
+in Goa\n";
+cout << "If you're a person who has a spirit governed by the intense passion to 
+keep\n";
+cout << "riding a variety of bikes, you've come to the right place.\n";
+cout << "Here at CA's Bike Rentals, we offer a diversified and exceptional 
+range of\n";
+cout << "two-wheelers that can be driven across Goa.\n";
+cout << "\n*Rentals are provided on a daily basis, Terms and Conditions 
+apply.";
+cout << "\n\n------------------------------------------------------------------
+-----------\n";
+cout << endl
+<< endl
+<< "Click enter to begin your bike rental..";
+cin.get();
+system("cls");
+cout << "\n-----------------------------|CA's BIKE RENTALS|--------------------
+---------\n\n";
+cout << " ENTER BIKE DETAILS\n";
+}//end of welcome 
+
+int main()
+{
+welcome();
+price l;
+l.getpdata();
+l.getedata();
+l.call();
+l.dis();
+++l;
+l.dispy();
+reg r;
+r.getdata();
+calcor g;
+g.display();
+r.dis2();
+g.calculate();
+l.dis();
+g.finalbill2();
+_getch();
+return 0;
 }
