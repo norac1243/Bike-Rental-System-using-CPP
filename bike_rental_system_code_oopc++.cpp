@@ -271,3 +271,53 @@ displayedata();
 void operator++();
 void dispy();
 };//end of class price
+
+//below is  operator++ that demonstrates operator overloading
+//what the overloaded function does is that it calculates the number of bikes (similar to user's selected specs) that have been rented
+//this is then displayed to the user
+void price::operator++()
+{
+string r = SELbran;
+if (r == bran[0])
+{
+h = h + 1;
+nb = h;
+}
+else if (r == bran[1])
+{
+s = s + 1;
+nb = s;
+}
+else if (r == bran[2])
+{
+f = f + 1;
+nb = f;
+}
+else if (r == bran[3])
+{
+v = v + 1;
+nb = v;
+}
+else if (r == bran[4])
+{
+j = j + 1;
+nb = j;
+}
+else
+{
+m = m + 1;
+nb = m;
+}
+}//end of overloaded function operator++
+
+//below displays cost abd number of bikes rented 
+void price::dispy()
+{
+cout << "\n\nTotal charges with respect to above properties " << z;
+cout << "\nNumber of bikes rented of this type: " << nb;
+cout << "\n\n------------------------------------------------------------------
+-----------\n";
+cout << "\nClick enter to proceed to registration...";
+cin.get();
+system("cls");
+}
