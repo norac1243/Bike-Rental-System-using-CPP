@@ -1,6 +1,6 @@
 # Bike Rental System with C++
 
-This first version of this project was created in 2021. <br>
+The first version of our Bike Rental System was created in 2021.<br><br>
 It demonstrates Object Oriented Concepts such as <br>
 - Class Inheritance <br>
 - Use of Constructors <br>
@@ -9,4 +9,5 @@ It demonstrates Object Oriented Concepts such as <br>
 Source code: 
 
 <br><br>
-Class Diagram:
+Class Diagram:<br>
+![alt text](https://github.com/norac1243/[reponame]/blob/[branch]/image.jpg?raw=true)
