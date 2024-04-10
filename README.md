@@ -1,6 +1,12 @@
 # Bike Rental System with C++
-## Demonstrates Concepts of the Object Oriented Paradigm 
 
-This first version of this project was created in 2021. 
+This first version of this project was created in 2021. <br>
+It demonstrates Object Oriented Concepts such as <br>
+- Class Inheritance <br>
+- Use of Constructors <br>
+- Operator Overloading <br>
+<br><br>  
 Source code: 
-ER Diagram:
+
+<br><br>
+Class Diagram:
