@@ -9,4 +9,4 @@ It demonstrates Object Oriented Concepts such as <br>
 
 <br><br>
 Class Diagram:<br>
-![Class Diagram(https://github.com/norac1243/Bike-Rental-System-using-CPP-/blob/main/Bike%20Rental%20System%20with%20C%2B%2B%20-%20Class%20Diagram.png)
+![Class Diagram](https://github.com/norac1243/Bike-Rental-System-using-CPP-/blob/main/Bike%20Rental%20System%20with%20C%2B%2B%20-%20Class%20Diagram.png)
