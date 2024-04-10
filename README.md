@@ -6,7 +6,7 @@ It demonstrates Object Oriented Concepts such as <br>
 - Use of Constructors <br>
 - Operator Overloading <br>
 <br><br>Source code file: bikerental_code_version1.cpp (in main branch)<br>
-[https://github.com/norac1243/Bike-Rental-System-using-CPP-/blob/main/bikerental_code_version1.cpp](url) 
+[https://github.com/norac1243/Bike-Rental-System-using-CPP-/blob/main/bikerental_code_version1.cpp](https://github.com/norac1243/Bike-Rental-System-using-CPP-/blob/main/bikerental_code_version1.cpp)
 
 <br><br>
 Class Diagram:<br>
